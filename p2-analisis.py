@@ -1,4 +1,3 @@
-
 # Cepeda Darrell NC = 0030   Fecha 6/11/2026
 # importar librerias
 import pandas as pd
@@ -23,3 +22,17 @@ print(agrupado['Presion_Arterial'].mean())
 
 # Presion_Arterial maxima
 print(agrupado['Nivel_Riesgo'].max())
+
+print(".*.*.Darrell*.*.*.* Segunda parte *.*.*.0030*.*.*.")
+print("Agregaciones multiples")
+print("mean --> promedio, sum --> suma")
+print("max --> maximo, min --> minimo")
+resultado_agregado = agrupado['Presion_Arterial'].agg(['mean', 'sum', 'max', 'min'])
+print(resultado_agregado)
+print("Agrupacion por varias columnas")
+print("Agrega columna al DataFrame")
+print("Columna Pacientes --> Presion_Arterial")
+df['Pacientes'] = ['A','B','A','B','A','B']
+agrupado_multiple = df.groupby(['Fumador', 'Pacientes'])['Presion_Arterial'].mean()
+print(agrupado_multiple)
+
